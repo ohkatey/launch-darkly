@@ -10,7 +10,7 @@
  * for its own context. Never put an SDK key or a flag trigger URL in browser
  * code.
  */
-export const LD_CLIENT_SIDE_ID = '6acfbb289ffa4007a5aebecc'; // REPLACE with your client-side ID
+export const LD_CLIENT_SIDE_ID = 'YOUR_ID_HERE'; // REPLACE with your client-side ID
 
 /**
  * Simulated monitoring rule (Part 1: Remediate): raise an alert when this many
