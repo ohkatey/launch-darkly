@@ -1,0 +1,95 @@
+<!doctype html>
+<!--
+  pricing.html: PRICING page (http://localhost:3000/pricing.html)
+
+  Static plans and FAQ. Plan buttons are tracked in js/pricing.js.
+  The chatbot and the console commands (window.abc) are added by
+  js/common.js on every page. Open DevTools (F12) → Console to see logs.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pricing · ABC Company</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Shared header (same markup on both pages) -->
+    <header class="site-header">
+      <a class="logo" href="index.html" aria-label="ABC Company home">
+        <span class="logo-mark" aria-hidden="true">abc</span> ABC Company
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="index.html" data-page="index">Home</a>
+        <a href="pricing.html" data-page="pricing">Pricing</a>
+        <a class="nav-cta" href="pricing.html">Start free trial</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-intro">
+        <h1>Simple pricing for every team</h1>
+        <p>Start free for 14 days. Upgrade, downgrade or cancel any time.</p>
+      </section>
+
+      <!-- Static plans. data-plan is used for click tracking (pricing.js). -->
+      <section class="plans" aria-label="Plans">
+        <article class="card plan">
+          <h2>Starter</h2>
+          <p class="plan-price"><strong>$12</strong> /user/month</p>
+          <ul>
+            <li>Up to 10 projects</li>
+            <li>Boards and timelines</li>
+            <li>Email support</li>
+          </ul>
+          <button class="btn btn-secondary" type="button" data-plan="starter">Choose Starter</button>
+        </article>
+
+        <article class="card plan plan-featured">
+          <span class="badge">Most popular</span>
+          <h2>Pro</h2>
+          <p class="plan-price"><strong>$24</strong> /user/month</p>
+          <ul>
+            <li>Unlimited projects</li>
+            <li>Automations and integrations</li>
+            <li>Priority support</li>
+          </ul>
+          <button class="btn btn-primary" type="button" data-plan="pro">Choose Pro</button>
+        </article>
+
+        <article class="card plan">
+          <h2>Enterprise</h2>
+          <p class="plan-price"><strong>Custom</strong></p>
+          <ul>
+            <li>SSO (SAML) and audit logs</li>
+            <li>Advanced permissions</li>
+            <li>Dedicated success manager</li>
+          </ul>
+          <button class="btn btn-secondary" type="button" data-plan="enterprise">Contact sales</button>
+        </article>
+      </section>
+
+      <section class="faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Questions</h2>
+        <details>
+          <summary>Is there a free trial?</summary>
+          <p>Yes. Every plan includes a 14-day free trial, no credit card required.</p>
+        </details>
+        <details>
+          <summary>Can I change plans later?</summary>
+          <p>Any time, from Settings → Billing. Changes are prorated.</p>
+        </details>
+        <details>
+          <summary>Still have questions?</summary>
+          <p>Use the “Ask ABC” chat in the corner of the page.</p>
+        </details>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      © ABC Company · A fictional company for a LaunchDarkly technical exercise
+    </footer>
+
+    <script type="module" src="js/pricing.js"></script>
+  </body>
+</html>

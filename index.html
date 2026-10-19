@@ -1,0 +1,78 @@
+<!doctype html>
+<!--
+  index.html: HOME page (http://localhost:3000/)
+
+  The flaggable component on this page is the hero (#hero). Its content is
+  rendered by js/home.js, which picks the classic or new version.
+  The chatbot and the console commands (window.abc) are added by
+  js/common.js on every page. Open DevTools (F12) → Console to see logs.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ABC Company · Work management for teams that ship</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Shared header (same markup on both pages) -->
+    <header class="site-header">
+      <a class="logo" href="index.html" aria-label="ABC Company home">
+        <span class="logo-mark" aria-hidden="true">abc</span> ABC Company
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="index.html" data-page="index">Home</a>
+        <a href="pricing.html" data-page="pricing">Pricing</a>
+        <a class="nav-cta" href="pricing.html">Start free trial</a>
+      </nav>
+    </header>
+
+    <main>
+      <!--
+        ★ FLAGGED COMPONENT: the hero, controlled by the hero-redesign flag.
+        js/home.js renders it. aria-live lets screen readers announce the
+        change when the hero swaps without a reload.
+      -->
+      <section id="hero" class="hero" aria-live="polite">
+        <p class="hero-loading">Loading…</p>
+      </section>
+
+      <!-- Static content below the hero (not flagged). -->
+      <section class="logos" aria-label="Customers">
+        <span>Trusted by teams at</span>
+        <ul>
+          <li>Northwind</li>
+          <li>Globex</li>
+          <li>Initech</li>
+          <li>Umbrella</li>
+          <li>Stark &amp; Co.</li>
+        </ul>
+      </section>
+
+      <section class="features" aria-labelledby="features-title">
+        <h2 id="features-title">Everything your team needs to ship</h2>
+        <div class="feature-grid">
+          <article class="card">
+            <h3>Plan</h3>
+            <p>Roadmaps, sprints and dependencies in one shared view.</p>
+          </article>
+          <article class="card">
+            <h3>Track</h3>
+            <p>Live status from every team, without status meetings.</p>
+          </article>
+          <article class="card">
+            <h3>Ship</h3>
+            <p>Release checklists and approvals built into the workflow.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      © ABC Company · A fictional company for a LaunchDarkly technical exercise
+    </footer>
+
+    <!-- Page script (ES module, so it can import the shared modules). -->
+    <script type="module" src="js/home.js"></script>
+  </body>
+</html>
